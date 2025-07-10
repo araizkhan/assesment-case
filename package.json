@@ -1,0 +1,26 @@
+{
+  "name": "billing-periods-calculator",
+  "version": "1.0.0",
+  "description": "Billing periods calculator with tests",
+  "main": "calcBillingPeriods.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "*.js",
+      "!*.test.js"
+    ]
+  }
+}
