@@ -12,9 +12,6 @@ const nearestPrevValidDate = (date) => {
 };
 
 const calcBillingPeriods = (cutoffDate, periodYear) => {
-  // Check if periodYear is a string
-  //   if (typeof periodYear !== "string") return false; // the function is not checking for the periodYear type mean if period year is not a striing it will fail the test.
-
   const regex = /^2\d{3}$/;
   const invalid = !regex.test(periodYear);
   if (invalid) return false;
