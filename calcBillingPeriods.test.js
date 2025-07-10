@@ -114,10 +114,17 @@ describe("calcBillingPeriods", () => {
         expect(Array.isArray(result)).toBe(true);
       });
 
-      // this test should fail because the function is not checking for the periodYear type mean if period year is not a striing it will fail the test.
       test("should handle numeric year", () => {
         const result = calcBillingPeriods(15, 2023);
-        expect(result).toBe(false); // Should fail regex test
+        expect(result).not.toBe(false);
+        expect(Array.isArray(result)).toBe(true);
+        expect(result).toHaveLength(12);
+      });
+
+      test("should handle float cutoffDate for numeric year", () => {
+        const result = calcBillingPeriods(15.5, 2023);
+        expect(result).not.toBe(false);
+        expect(Array.isArray(result)).toBe(true);
       });
     });
   });
